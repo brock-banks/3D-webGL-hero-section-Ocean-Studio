@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Ocean Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    
+    <!-- A11y: skip to content -->
+    <a class="skip-link" href="#section-1">Skip to content</a>
+
+    <header class="topbar" aria-label="Top navigation">
+        <div class="topbar__left" aria-label="Brand">
+          <a class="brand" href="#hero" aria-label="Ocean Studio">
+            <img src="assets/logo.png" alt="Ocean Studio" class="brand__logo" />
+            <span class="brand__name">OC Studio</span>
+          </a>
+        </div>
+      
+        <div class="topbar__right">
+          <button id="motion-toggle" class="btn btn--ghost" type="button" aria-pressed="false">
+            Reduce motion
+          </button>
+        </div>
+      </header>
+      <!-- Add this right after the <header class="topbar"...> -->
+<nav class="midnav" aria-label="Primary">
+    <a class="midnav__link" href="#section-1">What we do</a>
+    <a class="midnav__link" href="#section-2">Work</a>
+    <a class="midnav__link" href="#section-3">Contact</a>
+  </nav>
+
+    <section id="hero" aria-label="Intro dive">
+      <canvas id="webgl-canvas" aria-label="3D water scene"></canvas>
+
+     
+      <!-- progress -->
+      <div class="v-progress" aria-hidden="true">
+        <div id="dive-progress"></div>
+      </div>
+
+      <div class="hero-ui">
+        <div id="hero-title">
+          <h1>DIVE INTO<br /><span>THE DEEP</span></h1>
+
+          <!-- Updated: agency positioning (clear + premium) -->
+          <p class="hero-sub">
+            We design and build cinematic WebGL websites for premium brands—fast, accessible, and engineered to convert.
+          </p>
+
+          <div class="hero-ctas" role="group" aria-label="Primary actions">
+            <a class="btn btn--primary" href="#section-3" data-cta="primary">Book a call</a>
+            <a class="btn btn--ghost" href="#section-2" data-cta="secondary">View work</a>
+          </div>
+
+          <div class="hero-trust" aria-label="Highlights">
+            <div class="trust-pill">Performance budgets</div>
+            <div class="trust-pill">Accessible motion</div>
+            <div class="trust-pill">Design + engineering</div>
+          </div>
+
+          <div class="hero-links" role="group" aria-label="Jump links">
+            <a class="link" href="#section-1" id="skip-intro">Skip intro</a>
+            <a class="link" href="#section-1" id="skip-to-content">Skip to content ↓</a>
+          </div>
+        </div>
+
+        <div class="hero-bottom">
+          <div id="scroll-indicator" aria-hidden="true">
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+ <!-- overlays -->
+ <div id="section-bubbles" aria-hidden="true"></div>
+ <div id="fish-layer" aria-hidden="true"></div>
+  <!-- overlays -->
+  <div id="color-grade" aria-hidden="true"></div>
+  <div id="bubble-layer" aria-hidden="true"></div>
+  <div id="whale-layer" aria-hidden="true">
+    <div class="whale-wrap">
+      <div class="whale"></div>
+    </div>
+  </div>
+    <main id="content" tabindex="-1">
+      <section id="section-1" class="content-section" aria-labelledby="s1-title">
+        <div class="parallax-bg" aria-hidden="true"></div>
+
+        <div class="content">
+          <p class="eyebrow">What we do</p>
+          <h2 id="s1-title">Premium motion with a purpose</h2>
+          <p class="lead">
+            We build scroll stories that guide attention instead of fighting it—so users understand the message, trust the brand, and take action.
+          </p>
+
+          <div class="chip-row" aria-label="Capabilities">
+            <span class="chip">WebGL storytelling</span>
+            <span class="chip">Motion direction</span>
+            <span class="chip">Design systems</span>
+            <span class="chip">Performance budgets</span>
+          </div>
+
+          <ul class="bullets">
+            <li><strong>Clarity-first:</strong> narrative structure and hierarchy that keeps users oriented.</li>
+            <li><strong>Performance-safe:</strong> quality scaling, fallbacks, and profiling built into the process.</li>
+            <li><strong>Accessible by default:</strong> reduced motion, readable type, keyboard-friendly flows.</li>
+          </ul>
+
+          <div class="cred">
+            <div class="cred__logos" aria-label="Client logos">
+              <div class="logo">AURORA</div>
+              <div class="logo">NEREUS</div>
+              <div class="logo">LUMA</div>
+              <div class="logo">PEARL</div>
+            </div>
+
+            <div class="cred__stats" aria-label="Key stats">
+              <div class="stat">
+                <div class="stat__num">95+</div>
+                <div class="stat__label">Lighthouse target</div>
+              </div>
+              <div class="stat">
+                <div class="stat__num">2–4w</div>
+                <div class="stat__label">Typical ship time</div>
+              </div>
+              <div class="stat">
+                <div class="stat__num">1:1</div>
+                <div class="stat__label">Design → build fidelity</div>
+              </div>
+            </div>
+          </div>
+
+          <p class="bridge">Next: proof—what we shipped and what it changed.</p>
+
+          <div class="section-cta">
+            <a class="btn btn--primary" href="#section-2" data-cta="primary">See results</a>
+            <a class="btn btn--ghost" href="#section-3" data-cta="secondary">Book a call</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="section-2" class="content-section" aria-labelledby="s2-title">
+        <div class="parallax-bg" aria-hidden="true"></div>
+
+        <div class="content">
+          <p class="eyebrow">Proof</p>
+          <h2 id="s2-title">Selected work (outcomes first)</h2>
+          <p class="lead">
+            A few examples of premium motion that stayed fast on mobile, respected accessibility, and improved conversion paths.
+          </p>
+
+          <div class="grid">
+            <article class="card">
+              <p class="card__tag">Launch page</p>
+              <h3>Deep Blue — Product Reveal</h3>
+              <p class="card__meta">Design + WebGL build • 3 weeks</p>
+              <ul class="card__bullets">
+                <li>+28% CTA clicks after restructuring the scroll narrative</li>
+                <li>55–60fps desktop target with performance budget</li>
+                <li>Reduced-motion experience shipped as first-class</li>
+              </ul>
+              <a class="link" href="#section-3">Request the full case study</a>
+            </article>
+
+            <article class="card">
+              <p class="card__tag">Brand campaign</p>
+              <h3>Tide — Scroll Story</h3>
+              <p class="card__meta">Motion direction • 2 weeks</p>
+              <ul class="card__bullets">
+                <li>Lower bounce by clarifying the first 10 seconds</li>
+                <li>Story beats aligned to content hierarchy</li>
+                <li>Mobile profile + fallbacks included</li>
+              </ul>
+              <a class="link" href="#section-3">Book a walkthrough</a>
+            </article>
+
+            <article class="card">
+              <p class="card__tag">Engineering</p>
+              <h3>Performance & fallback</h3>
+              <p class="card__meta">Progressive enhancement</p>
+              <ul class="card__bullets">
+                <li>WebGL fallback background for low-power devices</li>
+                <li>Auto quality scaling based on device capability</li>
+                <li>Render pauses off-hero to reduce CPU/GPU use</li>
+              </ul>
+              <a class="link" href="#section-1">See our approach</a>
+            </article>
+          </div>
+
+          <p class="bridge">Next: how we run projects—calm, structured, and fast to ship.</p>
+
+          <div class="section-cta">
+            <a class="btn btn--primary" href="#section-3" data-cta="primary">Book a call</a>
+            <a class="btn btn--ghost" href="#section-1" data-cta="secondary">Back to top</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="section-3" class="content-section" aria-labelledby="s3-title">
+        <div class="parallax-bg" aria-hidden="true"></div>
+
+        <div class="content">
+          <p class="eyebrow">Next step</p>
+          <h2 id="s3-title">A clear process. A calm build.</h2>
+          <p class="lead">
+            In a short fit check, we’ll align on goals, scope, and success metrics—then move from direction to design to build with a performance budget from day one.
+          </p>
+
+          <div class="grid">
+            <article class="card">
+              <h3>Fit + goals (15 min)</h3>
+              <p>Define the audience, key message, and conversion target. If we’re not a fit, we’ll point you to the right path.</p>
+            </article>
+            <article class="card">
+              <h3>Direction → design</h3>
+              <p>Story beats, layout, and motion direction—so the experience reads clearly before we add depth.</p>
+            </article>
+            <article class="card">
+              <h3>Build + launch</h3>
+              <p>High-fidelity implementation, profiling, QA, and handoff—with fallbacks and reduced motion included.</p>
+            </article>
+          </div>
+
+          <div class="section-cta">
+            <a class="btn btn--primary" href="mailto:hello@example.com" data-cta="primary" id="email-cta">Email us</a>
+            <button class="btn btn--ghost" type="button" id="copy-email" data-cta="secondary">Copy email</button>
+          </div>
+
+          <p class="bridge">Tip: if motion feels too much, toggle “Reduce motion” in the top bar.</p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>© 2026 Ocean Studio. Built with Three.js + GSAP.</p>
+      </footer>
+    </main>
+
+    <!-- Neon cursor -->
+    <div id="neon-cursor" aria-hidden="true">
+      <div id="neon-dot"></div>
+      <div id="neon-ring"></div>
+      <div id="neon-ripples"></div>
+    </div>
+
+    <!-- Fallback background if WebGL fails -->
+    <div id="webgl-fallback" aria-hidden="true"></div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.134.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.134.0/examples/jsm/"
+        }
+      }
+    </script>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
